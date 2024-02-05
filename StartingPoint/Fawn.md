@@ -22,3 +22,45 @@ since it is considered non-standard to use FTP without encryption due to MitM at
 
 ![](../Images/Pasted%20image%2020240205123302.png)
 
+## Enumeration 
+
+performing a service scan with `nmap` we can see that the target is running telnet on an open port 21: 
+
+![](../Images/Pasted%20image%2020240205123828.png)
+
+## Foothold 
+
+first lets make sure that our FTP version is up to date and installed properly: 
+
+![](../Images/Pasted%20image%2020240205124212.png)
+
+now we can connect to the target using FTP and it prompts us to login: 
+
+![](../Images/Pasted%20image%2020240205124559.png)
+
+a typical misconfigured FTP server allows an `anonymous` account to access the service like any other authenticated user  
+
+logging in with the username `anonymous` and no password lets us access the service with a 230 successful response code: 
+
+![](../Images/Pasted%20image%2020240205124819.png)
+
+we can use `help` to see what commands are available to us: 
+
+![](../Images/Pasted%20image%2020240205125045.png)
+
+additionally we can use `man <command>` to learn about how to use each of these 
+
+using `ls` we can see the flag file: 
+
+![](../Images/Pasted%20image%2020240205125156.png)
+
+to download the flag file to our host machine we can use the `get` command: 
+
+![](../Images/Pasted%20image%2020240205125327.png)
+
+now the file will be downloaded to the directory we were in before we connected to the FTP server: 
+
+![](../Images/Pasted%20image%2020240205125419.png)
+
+
+
