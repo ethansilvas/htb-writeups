@@ -18,5 +18,21 @@ if a resource is missed during enumeration then you might lose a vital attack ve
 
 ## Enumeration 
 
+with the `ping` command we can test our connection to the target server: 
 
+![](../Images/Pasted%20image%2020240205120238.png)
+
+now we can scan for open ports with `nmap`, which sends requests to the target's ports to see if they reply   
+some ports are used by default by certain services, others might be non-standard which is shy we can use `sV` to use service detection: 
+
+![](../Images/Pasted%20image%2020240205120603.png)
+
+from the service scan we can see that port 23, or telnet, is open   
+since the target is running this service, it can receive telnet connections from other hosts in the network 
+
+when using the `telnet` command we can see that we are greeted with a login prompt: 
+
+![](../Images/Pasted%20image%2020240205120851.png)
+
+## Foothold 
 
