@@ -36,3 +36,15 @@ when using the `telnet` command we can see that we are greeted with a login prom
 
 ## Foothold 
 
+many services like the one we have found are often configured improperly and are open to authentication brute-force attacks  
+
+trying some basic usernames we can eventually login with `root`: 
+
+![](../Images/Pasted%20image%2020240205121234.png)
+
+using `ls` to look around the directory we can see the flag file: 
+
+![](../Images/Pasted%20image%2020240205121355.png)
+
+most boxes will either have a `flag.txt`, `user.txt`, or `root.txt`   
+other challenges will not contain a file but offer snippets of the flag as you solve it 
