@@ -45,7 +45,7 @@ we also need a password which we don't know but for now we will be trying either
 - guest authentication 
 - anonymous authentication 
 
-using `smbclient -L` will specify the target host: 
+using `smbclient -L` will list the shares of the specified host: 
 
 ![](../Images/Pasted%20image%2020240206130700.png)
 
@@ -56,4 +56,24 @@ from the output we can see 4 separate shares:
 - `WorkShares` - custom share 
 
 ## Foothold 
+
+we can try to connect to each of the shares except for the `IPC$` share because it is not browsable as any regular directory would be, and doesn't contain any files that we could use (in this stage of our learning process)   
+
+to begin trying to connect to the shares we can try the same tactic as before by attempting to login without the proper creds to find improperly configured permissions: 
+
+![](../Images/Pasted%20image%2020240206132955.png)
+
+we can see that the `WorkShares` share is open for us to connect to
+
+we can use the `help` command like in FTP: 
+
+![](../Images/Pasted%20image%2020240206133154.png)
+
+using `ls` we can see two directories for people: 
+
+![](../Images/Pasted%20image%2020240206133322.png)
+
+then going to the `Amy.J` directory we can download the `worknotes.txt` file: 
+
+![](../Images/Pasted%20image%2020240206133423.png)
 
