@@ -77,3 +77,7 @@ then going to the `Amy.J` directory we can download the `worknotes.txt` file:
 
 ![](../Images/Pasted%20image%2020240206133423.png)
 
+then in the `James.P` file we can see the flag which we can again use the `get` command to download to our local machine: 
+
+![](../Images/Pasted%20image%2020240206162101.png)
+
