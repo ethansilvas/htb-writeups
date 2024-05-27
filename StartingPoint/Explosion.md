@@ -25,3 +25,7 @@ remember `speedguide` for looking up ports:
 
 `https://www.speedguide.net/port.php?port=135`
 
+using `nmap -sV` we can see port 3389 open 
+
+connect with xfreerdp using `xfreerdp /v:{IP} /u:Administrator` and leave the password empty  
+on the desktop there is a flag file with the flag contained in it 
